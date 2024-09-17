@@ -16,6 +16,14 @@ calculate type of tetragon: square, rectangle, rhombus, parallelogram or other.
 
 #include "tetragon.h"
 
+#ifdef UNIT_TESTS
+
+#include "tests.h"
+
+int main() { return tests::run_tests(); }
+
+#else
+
 void assert(bool condition) {
     if (!condition) {
         throw std::logic_error("assertion failed");
@@ -79,3 +87,5 @@ Expected output:
 [INFO] Tetragon at 0x<address> destroyed.
 [INFO] Tetragon at 0x<address> destroyed.
 */
+
+#endif
